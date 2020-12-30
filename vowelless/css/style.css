@@ -1,0 +1,43 @@
+body {
+    padding: 5vh
+}
+
+.container-fluid {
+    border: thin solid grey;
+    border-radius: 5px
+}
+
+.header-row {
+    height: 12vh;
+    background: #22223b;
+}
+
+h1 {
+    color: #F2E9E4
+}
+
+.mid-row{
+    height: 95vh
+}
+
+.col-12 {
+    background: #9A8C98
+}
+
+.search-row {
+    height: 1000 px
+}
+
+.footer-row {
+    height: 7vh;
+    background: #C9ADA7
+}
+
+#resultsDiv {
+    overflow-y: scroll;
+    height: 70vh;
+    width: 100%;
+    padding: 20px;
+    border: thin solid grey;
+    border-radius: 5px
+}

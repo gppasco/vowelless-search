@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Vowelless Search</title>
+
+		<!-- Load CSS libraries -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/style.css">
+
+		<!-- GOOGLE FONTS -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,400italic,300italic' rel='stylesheet' type='text/css'>
+	</head>
+
+	<!-- SOME SAMPLE HTML HERE - DELETE EVERYTHING INSIDE THE BODY EXCEPT THE SCRIPTS ON THE BOTTOM TO START FROM SCRATCH -->
+	<!-- DON'T WRITE CSS IN YOUR HTML LIKE WE DID HERE - THE INLINE CSS SHOULD HELP YOU TO UNDERSTAND THE BEHAVIOR OF THE ELEMENTS BETTER -
+		 WHEN SUBMITTING, WE ALWAYS EXPECT CLEAR SEPARATION OF HTML, CSS, AND JS INTO THE PROPER FILES -->
+	<!-- COLOR PALETTE LINKS: https://coolors.co/22223b-4a4e69-9a8c98-c9ada7-f2e9e4, https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3 -->
+	<body>
+	<div class="container-fluid">
+		<div class="row justify-content-center header-row">
+			<div class="align-self-center">
+				<h1>Vowelless Crossword Search</h1>
+			</div>
+		</div>
+		<div class="row mid-row">
+			<div class="col-12">
+				<div class="row justify-content-center search-row">
+					<div class="align-self-center">
+						<br><br>
+						<p>Enter a vowelless search string. Use ? for single wildcards, and * for multiple wildcards. </p>
+						<input type="text" name="vowellessPrompt" id="vowellessPrompt" value="XMPL">
+						<input type="submit" name="vowellessSubmit" id="vowellessSubmit" onclick="validateInput()">
+						<br><br><br>
+					</div>
+				</div>
+			</div>
+			<div class="col-12" id="resultsContainer">
+				<div id="resultsDiv">
+				</div>
+			</div>
+		</div>
+		<div class="row footer-row"></div>
+	</div>
+
+
+
+	<!-- embedding JS libraries -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+	<!-- d3 -->
+	<script src="https://d3js.org/d3.v6.min.js"></script>
+
+	<script>
+		function validateInput() {
+			let regex = /^[b-df-hj-np-tv-xzB-DF-HJ-NP-TV-XZ*?\[\]]*$/g
+			let inputString = document.getElementById("vowellessPrompt").value
+
+			if (!inputString.match(regex)) {
+				alert("Make sure your input is only made of consonants and \"*\" or \"?\" characters")
+			} else {
+				myDataTable.wrangleData()
+			}
+		}
+	</script>
+	<!-- own js files -->
+	<script src="js/vowelless.js"></script>
+	<script src="js/main.js"></script>
+	</body>
+</html>
